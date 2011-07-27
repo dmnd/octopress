@@ -19,12 +19,12 @@ $ sudo opensnoop -n Python
   501  27864 Python         6 /Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/../../VERSION
   501  27864 Python         6 /var/folders/TX/TXTcFXvEFKKsTqfua-9AGE+++TI/-Tmp-/request.7SyMKG.tmp
   501  27864 Python         6 /var/folders/TX/TXTcFXvEFKKsTqfua-9AGE+++TI/-Tmp-/request.7SyMKG.tmp
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/templatetest.html
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/simple_student_info.html
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/simple_student_info.html
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/simple_student_info.html
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/simple_student_info.html
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/simple_student_info.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/templatetest.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/simple_student_info.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/simple_student_info.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/simple_student_info.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/simple_student_info.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/simple_student_info.html
 </pre>
 
 When calling <code>webapp.template.render</code> directly, the template is only read once:
@@ -35,9 +35,9 @@ $ sudo opensnoop -n Python
   501  27864 Python         6 /var/folders/TX/TXTcFXvEFKKsTqfua-9AGE+++TI/-Tmp-/request.j-MxJs.tmp
   501  27864 Python         6 /var/folders/TX/TXTcFXvEFKKsTqfua-9AGE+++TI/-Tmp-/request.j-MxJs.tmp
   501  27864 Python         7 .
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/templatetest.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/templatetest.html
   501  27864 Python         7 .
-  501  27864 Python         7 /Users/dmnd/Documents/projects/khan/src/desmond/simple_student_info.html
+  501  27864 Python         7 /Users/dmnd/projects/khan/src/desmond/simple_student_info.html
   501  27864 Python         7 .
   501  27864 Python         7 .
   501  27864 Python         7 .
@@ -56,4 +56,4 @@ import template_cached
 register = template_cached.create_template_register()
 {% endcodeblock %}
 
-Caveats: we're still using Django 0.9.6, so there's a chance this only applies to that version of Django on AppEngine.
+Caveats: we're still using Django 0.96, so there's a chance this only applies to that version of Django on AppEngine.
