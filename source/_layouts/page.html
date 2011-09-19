@@ -5,6 +5,7 @@ layout: default
 <div>
 <article>
   <header>
+  {% if page.header_logo %}<img class="header-logo" src="{{ page.header_logo }}">{% endif %}
     <h1 class="entry-title">{{ page.title }}</h1>
     {% if page.date %}<p class="meta">{% include post/date.html %}</p>{% endif %}
   </header>

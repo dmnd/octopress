@@ -1,2 +1,61 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+@mixin no-border {
+    border-style: none;
+    box-shadow: none;
+}
+
+.no-border {
+    @include no-border;
+}
+
+.header-logo {
+    @include float-left;
+    height: 64px;
+    width: 64px;
+    margin: 0 15px 0 0;
+
+    @include no-border;
+}
+
+.clear-right {
+    clear: right;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.download-link {
+    margin: 4em 0 4em 0;
+    white-space: nowrap;
+    a {
+        text-decoration: none;
+        &:visited {
+            color: $link-color;
+        }
+        span {
+            @extend h1;
+            font-size: 2em;
+            line-height: 1em;
+            text-decoration: none;
+        }
+    }
+    img {
+        @include no-border;
+        @include float-left;
+        width: 64px;
+        height: 64px;
+        margin: 0 15px 0 0;
+    }
+}
+
+.smallprint {
+    margin-top: 8em;
+    font-size: 85%;
+}
