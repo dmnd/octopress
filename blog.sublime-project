@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/dmnd/Projects/blog",
+            "folder_exclude_patterns": [
+                "public",
+                ".sass-cache",
+                "_code_cache",
+                ".pygments-cache",
+                ".themes",
+                "source/stylesheets/screen.css"
+            ]
+		}
+	]
+}
