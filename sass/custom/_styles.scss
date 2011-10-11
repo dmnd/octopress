@@ -59,3 +59,7 @@
     margin-top: 6em;
     font-size: 85%;
 }
+
+.unstyled-link {
+    @include unstyled-link;
+}
