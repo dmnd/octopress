@@ -56,9 +56,14 @@ module Jekyll
       @caption = nil
       @filetype = nil
       @highlight = true
+      @line_offset = 0
       if markup =~ /\s*lang:(\w+)/i
         @filetype = $1
         markup = markup.sub(/lang:\w+/i,'')
+      end
+      if markup =~ /\sline:(\d+)/i
+        @line_offset = $1.to_i
+        markup = markup.sub(/line:\d+/i, '')
       end
       if markup =~ CaptionUrlTitle
         @file = $1
@@ -79,9 +84,9 @@ module Jekyll
       source = "<figure class='code'>"
       source += @caption if @caption
       if @filetype
-        source += " #{highlight(code, @filetype)}</figure>"
+        source += " #{highlight(code, @filetype, @line_offset)}</figure>"
       else
-        source += "#{tableize_code(code.lstrip.rstrip.gsub(/</,'&lt;'))}</figure>"
+        source += "#{tableize_code(code.lstrip.rstrip.gsub(/</,'&lt;'), '', @line_offset)}</figure>"
       end
       source = safe_wrap(source)
       source = context['pygments_prefix'] + source if context['pygments_prefix']
