@@ -16,16 +16,16 @@ It's possible to get a big speed boost by setting up Apache as a [reverse proxy]
 
 ### How to set this up
 
-First, enable Virtual Hosts in Apache. Edit `/etc/httpd.conf` and go to line 623. Uncomment the line for vhosts, so it looks like the following.
+First, enable Virtual Hosts in Apache. Edit `/etc/apache2/httpd.conf` and go to line 623. Uncomment the line for vhosts, so it looks like the following.
 
-{% codeblock /etc/httpd.conf lang:apache line:622 %}
+{% codeblock /etc/apache2/httpd.conf lang:apache line:622 %}
 # Virtual hosts
 Include /private/etc/apache2/extra/httpd-vhosts.conf
 {% endcodeblock %}
 
-Next, open `/etc/extra/httpd-vhosts.conf` and insert something like the following. Fellow KA devs shouldn't have to edit much, but if you're working on a different app you will obviously have to change the static directories. Look in `app.yaml` to see the full list of statically served paths.
+Next, open `/etc/apache2/extra/httpd-vhosts.conf` and insert something like the following. Fellow KA devs shouldn't have to edit much, but if you're working on a different app you will obviously have to change the static directories. Look in `app.yaml` to see the full list of statically served paths.
 
-{% codeblock /etc/extra/httpd-vhosts.conf lang:apache %}
+{% codeblock /etc/apache2/extra/httpd-vhosts.conf lang:apache %}
 <VirtualHost *:80>
     ServerName khanacademy.local
 
@@ -81,6 +81,10 @@ fe80::1%lo0 localhost
 # Easy access to app engine dev server
 127.0.0.1   khanacademy.local
 {% endcodeblock %}
+
+This allows you to access your dev server via something other than localhost, which is needed for the virtual host to work. If you don't already have `--address=0.0.0.0` as a parameter to `dev_appserver.py` [you will need to add this](http://code.google.com/appengine/docs/python/tools/devserver.html#Command_Line_Arguments).
+
+Also, Apache needs to be enabled - the easiest way to do this is to go to Sharing under System Preferences and check the "Web Sharing" item. If you already have it enabled, you may need to clear and check it again to force a restart. If it doesn't start, check your config syntax with `apachectl -St`.
 
 This setup should work on OS X Lion. Small changes might be needed for other OSes. If you had to tweak anything, mention it in the comments.
 
