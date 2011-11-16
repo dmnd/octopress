@@ -3,7 +3,7 @@ layout: post
 title: "Your own personal hgignore file"
 date: 2011-10-06 12:28
 comments: true
-categories:
+categories: mercurial
 ---
 Sometimes people don't agree on the contents of the tracked .hgignore file in the repository root. For example, I don't like having \*orig in .hgignore as having backup files show up when I <code>grep</code> is annoying. I solved that problem by removing the \*orig pattern and telling other repository users about <code>hg purge</code>.
 
