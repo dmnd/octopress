@@ -14,6 +14,8 @@ At [Khan Academy](http://www.khanacademy.org), a single pageload in development 
 
 It's possible to get a big speed boost by setting up Apache as a [reverse proxy](http://en.wikipedia.org/wiki/Reverse_proxy) in front of your dev server. All requests for static assets will be handled by Apache, which is blazing fast compared to `dev_appserver.py`. The 35 second request above is fulfilled in only 2 seconds, with most of the static files loading in parallel (see the right side).
 
+*Update 2011-11-15*: It turns out nginx is even quicker at serving static files, uses less memory, and easier to configure too! From here on I recommend [reading this post instead](/blog/2011/12/05/using-nginx-as-a-reverse-proxy-for-speedy-app-engine-development/), which tells you how to set up the same thing with [nginx](http://wiki.nginx.org/Main) rather than Apache.
+
 ### How to set this up
 
 First, enable Virtual Hosts in Apache. Edit `/etc/apache2/httpd.conf` and go to line 623. Uncomment the line for vhosts, so it looks like the following.
