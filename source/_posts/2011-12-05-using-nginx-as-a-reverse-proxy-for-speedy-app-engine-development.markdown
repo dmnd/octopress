@@ -18,9 +18,11 @@ Instead, I switched to using [nginx](http://wiki.nginx.org/Main), which is somet
 
 First, install nginx. With homebrew on OS X this is just `brew install nginx`.
 
-Next, we need to configure nginx to work as a reverse proxy. The following configuration did the trick for me. Notice how [DRY](http://c2.com/cgi/wiki?DontRepeatYourself) this config is compared to the Apache equivalent. It's really easy to add extra `server` sections if you have multiple development servers.
+Next, we need to configure nginx to work as a reverse proxy. The following configuration did the trick for me. I put this file at `/usr/local/etc/nginx/kadev.conf`, as the `include` refers to a file `mime.types` in that directory.
 
-{% codeblock /usr/local/Cellar/nginx/kadev.conf lang:nginx %}
+Notice how [DRY](http://c2.com/cgi/wiki?DontRepeatYourself) this config is compared to the Apache equivalent. It's really easy to add extra `server` sections if you have multiple development servers.
+
+{% codeblock /usr/local/etc/nginx/kadev.conf lang:nginx %}
 worker_processes        1;
 
 events {
