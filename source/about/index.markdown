@@ -7,7 +7,7 @@ footer: true
 published: false
 ---
 
-I'm proud to be part of the excellent [Khan Academy team](http://www.khanacademy.org/about/the-team). Prior to moving to the Bay Area, I worked at Bing in Bellevue. I grew up in Melbourne, Australia, and went to Swinburne University where I earned degrees in Engineering and Computer Science.
+I'm proud to be part of the excellent [Khan Academy team](http://www.khanacademy.org/about/the-team). Prior to moving to the Bay Area, I worked at [Bing](http://www.bing.com) in Bellevue WA. I grew up in Melbourne, Australia, where I went Swinburne University and earned degrees in Robotics Engineering and Computer Science.
 
 ## How to stalk me:
 
