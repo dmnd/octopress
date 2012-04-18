@@ -36,8 +36,8 @@ http {
     keepalive_timeout   65;
 
     server {
-        listen          khanacademy.local:80;
-        server_name     khanacademy.local;
+        listen          khanacademy.dev:80;
+        server_name     khanacademy.dev;
         root            /Users/dmnd/Projects/khan/src/stable;
 
         location / {
